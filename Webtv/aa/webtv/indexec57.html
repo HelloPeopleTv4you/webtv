@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportsFlix BDIX | By X Fire Flix WebTV</title>
+    
+
+    
+    <!-- Other styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="site-logo">
+                <a href="index-2.html">
+                    <img src="assets/webtvlogo.png" alt="ησσвмαѕтєя Channels" class="header-logo">
+                </a>
+            </div>
+            <input type="text" id="searchInput" placeholder="Search channels...">
+            
+            <div class="categories">
+                <a href="indexa377.html?category=all" class="">All</a>
+                                    <a href="indexec57.html?category=Entertainments" 
+                       class="active">
+                        Entertainments                    </a>
+                                    <a href="index142c.html?category=Hindi+Movies" 
+                       class="">
+                        Hindi Movies                    </a>
+                                    <a href="index44f6.html?category=Indian+Bangla" 
+                       class="">
+                        Indian Bangla                    </a>
+                                    <a href="index9417.html?category=Information" 
+                       class="">
+                        Information                    </a>
+                                    <a href="indexd008.html?category=Kids" 
+                       class="">
+                        Kids                    </a>
+                                    <a href="index5cc3.html?category=Movies" 
+                       class="">
+                        Movies                    </a>
+                                    <a href="index8196.html?category=Music" 
+                       class="">
+                        Music                    </a>
+                                    <a href="indexaf27.html?category=News" 
+                       class="">
+                        News                    </a>
+                                    <a href="indexadfd.html?category=Sports" 
+                       class="">
+                        Sports                    </a>
+                            </div>
+        </header>
+
+        <div class="channels-grid">
+                                                                                                                                <div class="channel-card" data-name="Zee Marathi">
+                        <a href="playdcfd.html?id=4">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi-i5prkgwKrEXGjwZTaK3P-La9vL-0I24Lw&amp;s" 
+                                 alt="Zee Marathi"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>Zee Marathi</h3>
+                        </a>
+                    </div>
+                                                        <div class="channel-card" data-name="Zee Talkies">
+                        <a href="playd61c.html?id=5">
+                            <img src="https://yt3.googleusercontent.com/ytc/AIdro_kaagCCamDXrwbIn-_YYVa93m0J_J-Ahda08hPcRqf8Lw=s900-c-k-c0x00ffffff-no-rj" 
+                                 alt="Zee Talkies"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>Zee Talkies</h3>
+                        </a>
+                    </div>
+                                                                            <div class="channel-card" data-name="Shorts TV">
+                        <a href="play8803.html?id=7">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrb0Dmn99c9WZgM0PuUG3zraPKSv9VjD0ulA&amp;s" 
+                                 alt="Shorts TV"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>Shorts TV</h3>
+                        </a>
+                    </div>
+                                                        <div class="channel-card" data-name="Korean Dramas">
+                        <a href="playc3c9.html?id=8">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Gt8W9uh49rkrog1ldtNs5TxDAQOULpFtqQ&amp;s" 
+                                 alt="Korean Dramas"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>Korean Dramas</h3>
+                        </a>
+                    </div>
+                                                        <div class="channel-card" data-name="And TV">
+                        <a href="play5255.html?id=9">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMmzui_TJ7U5d5RiHbqcqh173qA9-h-MFDjw&amp;s" 
+                                 alt="And TV"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>And TV</h3>
+                        </a>
+                    </div>
+                                                                            <div class="channel-card" data-name="Zee TV">
+                        <a href="play0055.html?id=11">
+                            <img src="../../upload.wikimedia.org/wikipedia/commons/d/d0/Zee_TV-2018.png" 
+                                 alt="Zee TV"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>Zee TV</h3>
+                        </a>
+                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.getElementsByClassName('channel-card');
+        
+        function performSearch() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            Array.from(cards).forEach(card => {
+                const channelName = card.dataset.name.toLowerCase();
+                card.style.display = channelName.includes(searchTerm) ? 'block' : 'none';
+            });
+        }
+
+        // Real-time search events
+        searchInput.addEventListener('input', performSearch);
+        searchInput.addEventListener('paste', performSearch);
+        searchInput.addEventListener('search', performSearch);
+    });
+    </script>
+
+    <style>
+    /* Add these styles to your existing CSS */
+    .channel-card {
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    #searchInput {
+        width: 100%;
+        max-width: 300px;
+        padding: 8px 12px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    #searchInput:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0,123,255,0.3);
+        outline: none;
+    }
+    </style>
+</body>
+
+<!-- Mirrored from noobmaster.xyz/webtv/?category=Entertainments by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Mar 2025 08:03:57 GMT -->
+</html>

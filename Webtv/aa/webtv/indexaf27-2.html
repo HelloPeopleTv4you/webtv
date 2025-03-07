@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportsFlix BDIX | By X Fire Flix WebTV</title>
+    
+
+    
+    <!-- Other styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="site-logo">
+                <a href="index-2.html">
+                    <img src="assets/webtvlogo.png" alt="ησσвмαѕтєя Channels" class="header-logo">
+                </a>
+            </div>
+            <input type="text" id="searchInput" placeholder="Search channels...">
+            
+            <div class="categories">
+                <a href="indexa377-2.html?category=all" class="">All</a>
+                                    <a href="indexec57-2.html?category=Entertainments" 
+                       class="">
+                        Entertainments                    </a>
+                                    <a href="index142c-2.html?category=Hindi+Movies" 
+                       class="">
+                        Hindi Movies                    </a>
+                                    <a href="index44f6-2.html?category=Indian+Bangla" 
+                       class="">
+                        Indian Bangla                    </a>
+                                    <a href="index9417-2.html?category=Information" 
+                       class="">
+                        Information                    </a>
+                                    <a href="indexd008-2.html?category=Kids" 
+                       class="">
+                        Kids                    </a>
+                                    <a href="index5cc3-2.html?category=Movies" 
+                       class="">
+                        Movies                    </a>
+                                    <a href="index8196-2.html?category=Music" 
+                       class="">
+                        Music                    </a>
+                                    <a href="indexaf27-2.html?category=News" 
+                       class="active">
+                        News                    </a>
+                                    <a href="indexadfd-2.html?category=Sports" 
+                       class="">
+                        Sports                    </a>
+                            </div>
+        </header>
+
+        <div class="channels-grid">
+                                                                                                            <div class="channel-card" data-name="24 Ghanta">
+                        <a href="playd708.html?id=3">
+                            <img src="../../upload.wikimedia.org/wikipedia/bn/b/b4/%e0%a6%9c%e0%a6%bf_%e0%a7%a8%e0%a7%aa_%e0%a6%98%e0%a6%a3%e0%a7%8d%e0%a6%9f%e0%a6%be_%e0%a6%8f%e0%a6%b0_%e0%a6%b2%e0%a7%8b%e0%a6%97%e0%a7%8b.png" 
+                                 alt="24 Ghanta"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>24 Ghanta</h3>
+                        </a>
+                    </div>
+                                                                                                <div class="channel-card" data-name="Zee Business">
+                        <a href="play3a9f.html?id=6">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvV8VWbxLpQTkNX4kU1V5Cprf9mYaiSxluWQ&amp;s" 
+                                 alt="Zee Business"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>Zee Business</h3>
+                        </a>
+                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.getElementsByClassName('channel-card');
+        
+        function performSearch() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            Array.from(cards).forEach(card => {
+                const channelName = card.dataset.name.toLowerCase();
+                card.style.display = channelName.includes(searchTerm) ? 'block' : 'none';
+            });
+        }
+
+        // Real-time search events
+        searchInput.addEventListener('input', performSearch);
+        searchInput.addEventListener('paste', performSearch);
+        searchInput.addEventListener('search', performSearch);
+    });
+    </script>
+
+    <style>
+    /* Add these styles to your existing CSS */
+    .channel-card {
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    #searchInput {
+        width: 100%;
+        max-width: 300px;
+        padding: 8px 12px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    #searchInput:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0,123,255,0.3);
+        outline: none;
+    }
+    </style>
+</body>
+
+<!-- Mirrored from noobmaster.xyz/webtv/index.php?category=News by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 04 Mar 2025 08:04:18 GMT -->
+</html>

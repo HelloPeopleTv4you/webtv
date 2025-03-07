@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportsFlix BDIX | By X Fire Flix WebTV</title>
+    
+    
+
+    
+    <!-- Other styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="site-logo">
+                <a href="index-2.html">
+                    <img src="assets/webtvlogo.png" alt="" class="header-logo">
+                </a>
+            </div>
+            <input type="text" id="searchInput" placeholder="Search channels...">
+            
+            <div class="categories">
+                <a href="indexa377.html?category=all" class="">All</a>
+                                    <a href="indexec57.html?category=Entertainments" 
+                       class="">
+                        Entertainments                    </a>
+                                    <a href="index142c.html?category=Hindi+Movies" 
+                       class="active">
+                        Hindi Movies                    </a>
+                                    <a href="index44f6.html?category=Indian+Bangla" 
+                       class="">
+                        Indian Bangla                    </a>
+                                    <a href="index9417.html?category=Information" 
+                       class="">
+                        Information                    </a>
+                                    <a href="indexd008.html?category=Kids" 
+                       class="">
+                        Kids                    </a>
+                                    <a href="index5cc3.html?category=Movies" 
+                       class="">
+                        Movies                    </a>
+                                    <a href="index8196.html?category=Music" 
+                       class="">
+                        Music                    </a>
+                                    <a href="indexaf27.html?category=News" 
+                       class="">
+                        News                    </a>
+                                    <a href="indexadfd.html?category=Sports" 
+                       class="">
+                        Sports                    </a>
+                            </div>
+        </header>
+
+        <div class="channels-grid">
+                                                                                                                                                                                                                                                        <div class="channel-card" data-name="And Pictures">
+                        <a href="playf41b.html?id=10">
+                            <img src="../../jiotvimages.cdn.jio.com/dare_images/images/200/-/And_Pictures.png" 
+                                 alt="And Pictures"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>And Pictures</h3>
+                        </a>
+                    </div>
+                                                                            <div class="channel-card" data-name="Zee Cinema">
+                        <a href="play4ef9.html?id=12">
+                            <img src="../../astromedia.com.my/wp-content/uploads/2024/01/Zee-Cinema.png" 
+                                 alt="Zee Cinema"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>Zee Cinema</h3>
+                        </a>
+                    </div>
+                                                        <div class="channel-card" data-name="Zee Bollywood">
+                        <a href="play6e03.html?id=13">
+                            <img src="../../www.bizasialive.com/wp-content/uploads/2018/08/zeebollywoodlogoNEW.jpg" 
+                                 alt="Zee Bollywood"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>Zee Bollywood</h3>
+                        </a>
+                    </div>
+                                                        <div class="channel-card" data-name="Zee Anmol">
+                        <a href="play87f1.html?id=14">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI0T54ROLDWh7cBfPDZL539n7ZHytYgfxwFA&amp;s" 
+                                 alt="Zee Anmol"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>Zee Anmol</h3>
+                        </a>
+                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <div class="channel-card" data-name="Zee Anmol Cinema">
+                        <a href="play7429.html?id=15">
+                            <img src="../../multireach.in/wp-content/uploads/2020/10/zeeanmolcinema-1.jpg" 
+                                 alt="Zee Anmol Cinema"
+                                 onerror="this.src='assets/default-logo.html'">
+                            <h3>Zee Anmol Cinema</h3>
+                        </a>
+                    </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.getElementsByClassName('channel-card');
+        
+        function performSearch() {
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            Array.from(cards).forEach(card => {
+                const channelName = card.dataset.name.toLowerCase();
+                card.style.display = channelName.includes(searchTerm) ? 'block' : 'none';
+            });
+        }
+
+        // Real-time search events
+        searchInput.addEventListener('input', performSearch);
+        searchInput.addEventListener('paste', performSearch);
+        searchInput.addEventListener('search', performSearch);
+    });
+    </script>
+
+    <style>
+    /* Add these styles to your existing CSS */
+    .channel-card {
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    #searchInput {
+        width: 100%;
+        max-width: 300px;
+        padding: 8px 12px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    #searchInput:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0,123,255,0.3);
+        outline: none;
+    }
+    </style>
+</body>
+
+
+</html>
