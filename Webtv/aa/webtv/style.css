@@ -1,0 +1,441 @@
+:root {
+    /* Color Palette */
+    --primary-color: #2563eb;
+    --secondary-color: #1e40af;
+    --accent-color: #1aa6d1;
+    --background: #f8fafc;
+    --card-bg: #ffffff;
+    --header-bg: #333333;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    
+    /* Shadows & Effects */
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --transition: all 0.3s ease;
+    
+    /* Spacing */
+    --container-padding: clamp(0.5rem, 2vw, 2rem);
+    --grid-gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--accent-color);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: var(--container-padding);
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 1rem;
+    padding: 2rem 0;
+    background: var(--header-bg);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    color: var(--text-secondary);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.site-logo {
+    margin-bottom: 1.5rem;
+}
+
+.header-logo {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.site-logo a:hover .header-logo {
+    transform: scale(1.05);
+}
+
+/* Search Input */
+#searchInput {
+    width: 90%;
+    max-width: 500px;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem auto;
+    border: 2px solid #e2e8f0;
+    border-radius: 1.5rem;
+    font-size: 1rem;
+    background: var(--background);
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+#searchInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+header input::placeholder {
+    color: var(--text-secondary);
+}
+
+/* Categories Navigation */
+.categories {
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0 1rem;
+}
+
+.categories a {
+    padding: 0.75rem 1.5rem;
+    background: var(--card-bg);
+    border-radius: 2rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    border: 2px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.categories a:hover {
+    background: #f1f5f9;
+    transform: translateY(-2px);
+}
+
+.categories a.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+/* Channel Grid */
+.channels-grid {
+    display: grid;
+    gap: var(--grid-gap);
+    padding: 1rem;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.channel-card {
+    background: var(--accent-color);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: var(--transition);
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.channel-card:hover {
+    transform: translateY(-2px);
+    background: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 38, 197, 0.2);
+}
+
+.channel-card img {
+    width: 100%;
+    height: 70%;
+    object-fit: contain;
+    background: white;
+    padding: 0.5rem;
+    transition: var(--transition);
+}
+
+.channel-card:hover img {
+    transform: scale(1.05);
+}
+
+.channel-card h3 {
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 500;
+    background: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transition: var(--transition);
+}
+
+.channel-card a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Player Page Styles */
+.player-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--primary-color);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 0.75rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.back-button:hover {
+    background: var(--secondary-color);
+    transform: translateX(-5px);
+}
+
+.player-container h1 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+#player {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 2px solid white;
+}
+
+.player-wrapper {
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 2px solid white;
+    background: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .channels-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .header-logo {
+        max-height: 50px;
+    }
+    
+    .categories a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .channels-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .channels-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .channels-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* Loading Animation */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+}
+
+/* Error Message */
+.error {
+    text-align: center;
+    padding: 2rem;
+    color: #ef4444;
+    background: #fee2e2;
+    border-radius: 0.75rem;
+    margin: 1rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--card-bg);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-secondary);
+}
+
+/* Channel title and logo container */
+.channel-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+.channel-title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;  /* Space between logo and channel name */
+}
+
+.channel-title img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.channel-title h1 {
+    color: white;  /* White text color */
+    font-weight: 700;  /* Bold text */
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Right side with Ayna logo */
+.ayna-logo {
+    max-width: 200px;
+    height: auto;
+}
+
+.ayna-logo img {
+    width: 100%;
+    height: auto;
+}
+
+/* Mobile-friendly grid adjustments */
+.channels-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.channel-card {
+    background: #eee3df;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    aspect-ratio: 1/1;
+}
+
+.channel-card img {
+    width: 100%;
+    height: 70%;
+    object-fit: contain;
+    background: white;
+    padding: 0.5rem;
+}
+
+.channel-card h3 {
+    padding: 0.5rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: 500;
+}
+
+/* Categories styling for mobile */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    justify-content: center;
+}
+
+.categories a {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+    background: white;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.categories a.active {
+    background: #007bff;
+    color: white;
+}
+
+/* Header adjustments */
+header {
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+#searchInput {
+    width: 90%;
+    max-width: none;
+    padding: 0.75rem;
+    border-radius: 1.5rem;
+    border: 1px solid #ddd;
+    margin: 1rem 0;
+    font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .channels-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .channels-grid {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* Header logo adjustments */
+.header-logo {
+    max-height: 50px;
+    margin-bottom: 1rem;
+}
+
+/* Container padding adjustment */
+.container {
+    padding: 0.5rem;
+}
+
