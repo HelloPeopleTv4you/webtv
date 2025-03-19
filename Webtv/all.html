@@ -67,15 +67,16 @@
         }
     })();
   </script>
-  <script>
+  
+<script>
 setTimeout(() => {
     try {
-        jwplayer().on('ready', function() {
-            this.setConfig({
-                logo: {
-                    file: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGLAldiFmN8pezsOL5A8L9gqwFEZNUsnmabt7r5c_BTzsUty1p1Kar9Qxq&s=10", // এখানে আপনার লোগো URL দিন
-                    hide: false // যদি লোগো দেখাতে চান, তাহলে false করুন
-                }
+        var playerInstance = jwplayer();
+        playerInstance.on('ready', function() {
+            playerInstance.setLogo({
+                file: "https://yourcustomdomain.com/custom-logo.png", // এখানে আপনার লোগোর লিংক দিন
+                position: "top-right", // লোগোর পজিশন (top-left, top-right, bottom-left, bottom-right)
+                margin: 10 // লোগোর মার্জিন (px)
             });
         });
     } catch (error) {
@@ -83,5 +84,6 @@ setTimeout(() => {
     }
 }, 3000);
   </script>
+  
 </body>
 </html>
