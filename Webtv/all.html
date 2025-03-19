@@ -1,129 +1,79 @@
-Here is the full code with the custom logo replacement for JWPlayer while maintaining the obfuscation logic:
-
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SportsFlix BDIX | By X Fire Flix WebTV</title>
-  <style>
-    * {
-        margin: 0 !important;
-        padding: 0 !important;
-        box-sizing: border-box !important;
-    }
-    html, body {
-        width: 100% !important;
-        height: 100% !important;
-        overflow: hidden !important;
-        background-color: #000 !important;
-    }
-    #player {
-        position: absolute !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        outline: none !important;
-    }
-    .jw-wrapper {
-        position: fixed !important;
-        width: 100% !important;
-        height: 100% !important;
-    }
-    .jw-video {
-        object-fit: contain !important;
-        width: 100% !important;
-        height: 100% !important;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportsFlix BDIX | By X Fire Flix WebTV</title>
+    
+    
+    <div id="vplayer"></div>
+
+       
+    
+    <!-- JW Player -->
+    <script src="../../ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
+    <script>jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo";</script>
+    <link rel="stylesheet" href="JW.html">
+    
+    <style>
+        * {
+            margin: 0 !important;
+            padding: 0 !important;
+            box-sizing: border-box !important;
+        }
+        
+        html, body {
+            width: 100% !important;
+            height: 100% !important;
+            overflow: hidden !important;
+            background-color: #000 !important;
+        }
+        
+        #player {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            outline: none !important;
+        }
+        
+        .jw-wrapper {
+            position: fixed !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+        
+        .jw-video {
+            object-fit: contain !important;
+            width: 100% !important;
+            height: 100% !important;
+        }
+    </style>
 </head>
 <body>
-  <div id="vplayer"></div><!-- JW Player -->
-  <script src="https://ssl.p.jwpcdn.com/player/v/8.26.0/jwplayer.js"></script>
-  <script>
-    jwplayer.key = "XSuP4qMl+9tK17QNb+4+th2Pm9AWgMO/cYH8CI0HGGr7bdjo"; // Your JWPlayer key
+    <div id="player"></div>
 
+    <script>
     (function() {
         try {
             // Decode and execute the player code
-            const obfuscatedCode = "N2tTZmdBQ0lnb1FEN2t5SjVSV1lsSkhJemxHSXlWV2VoeEdVbmd5WnZ4bUxseDJiejUyYmpCQ0lnQUNJZ0FDSUswd2Vna0NLdTlXYTBObWIxWkdJc2NTZWtGV1p5ZENLdTltTGxObWJoUjNjdWxrY2xsWFlzQkhJZ0FDSUswZ0NOc1RLOUJDSWdBaUNOc1RLbjR5YmxSV2EyQlNab1JISTVGR2J3QnliMEJ5WnVsV2V5UkhJbHhXYW9kSElrVm1jeVYzWWo5R0l5OW1jeVZHSXVGMEpvUW5jbHhXWWdBQ0lnQUNJZ0FpQ05zVEtsQkNMbm9qY3ZKbmNsQmljbGxYWXNCMUpvSTNieUpYWnVVR2J2Tm5idk5HSWdBQ0lnQUNJZ29RRDdCU0tsaGlidmxHZGo1V2RtQkNMbkkzYnlKWFpuZ2lidjVTWmo1V1kwTm5iSkpYWjVGR2J3QkNJZ0FpQ05vUUQ3a1NmZ0FDSWdvUUQ5QkNJZ0FDSWdBQ0lLMGdJNGxHYm1SWFp1SkNJNlVXYmg1R0lnQUNJZ0FDSWdBQ0lnQWlDTnNISTY0V2FyTkhJZ0FDSWdBQ0lnb1FEczBISWdBQ0lnQUNJZ29RRG5RSGFubG1jdEEzYjBkQ0k2NDJicFJYYXo5R2NnQUNJZ0FDSWdBQ0lnQUNJSzBBTGxWbmMwQmlPbFJXYW9CQ0lnQUNJZ0FDSWdBQ0lnQln...";  
-            const step1 = atob(obfuscatedCode);  
-            const step2 = step1.split('').reverse().join('');  
-            const decodedCode = atob(step2);  
+            const obfuscatedCode = "N2tTZmdBQ0lnb1FEN2t5SjVSV1lsSkhJemxHSXlWV2VoeEdVbmd5WnZ4bUxseDJiejUyYmpCQ0lnQUNJZ0FDSUswd2Vna0NLdTlXYTBObWIxWkdJc2NTZWtGV1p5ZENLdTltTGxObWJoUjNjdWxrY2xsWFlzQkhJZ0FDSUswZ0NOc1RLOUJDSWdBaUNOc1RLbjR5YmxSV2EyQlNab1JISTVGR2J3QnliMEJ5WnVsV2V5UkhJbHhXYW9kSElrVm1jeVYzWWo5R0l5OW1jeVZHSXVGMEpvUW5jbHhXWWdBQ0lnQUNJZ0FpQ05zVEtsQkNMbm9qY3ZKbmNsQmljbGxYWXNCMUpvSTNieUpYWnVVR2J2Tm5idk5HSWdBQ0lnQUNJZ29RRDdCU0tsaGlidmxHZGo1V2RtQkNMbkkzYnlKWFpuZ2lidjVTWmo1V1kwTm5iSkpYWjVGR2J3QkNJZ0FpQ05vUUQ3a1NmZ0FDSWdvUUQ5QkNJZ0FDSWdBQ0lLMGdJNGxHYm1SWFp1SkNJNlVXYmg1R0lnQUNJZ0FDSWdBQ0lnQWlDTnNISTY0V2FyTkhJZ0FDSWdBQ0lnb1FEczBISWdBQ0lnQUNJZ29RRG5RSGFubG1jdEEzYjBkQ0k2NDJicFJYYXo5R2NnQUNJZ0FDSWdBQ0lnQUNJSzBBTGxWbmMwQmlPbFJXYW9CQ0lnQUNJZ0FDSWdBQ0lnb1FEc0l5WnVCbkx5a1RNNEpUT3g4MWJuOUdidk0zYm45R2J2MDJiajVTWjJsR2J2NVdaNDl5TDZBSGQwaG1JZ29UWnNsbVpnQUNJZ0FDSWdBQ0lnQUNJSzBBSTdCaU92ZDJic0JDSWdBQ0lnQUNJSzBBTGxWbmMwQmlPNXhXWjJsR2RoNTBjdTlXYTBCWFlESlhaazVXWnlCQ0lnQUNJZ0FDSUswQUxpa2pPMkVqSWdvemJwUlhZeVIzWWxCM2NoQkNJZ0FDSWdBQ0lLMEFMbFZuYzBCaU9zMUdkb05IYm9CQ0lnQUNJZ0FDSUswQUxpVURidFJIYWlBaU81SlhZdGxtY3dCQ0lnQUNJZ0FDSUswQUxsTkhiaFpHSTZVR2QxMUdJZ0FDSWdBQ0lnb1FEc1VXZHlSSEk2UW5jaFIzY3ZSWGRoQkNJZ0FDSWdBQ0lLMEFMaTBtY3ZaV2F1Vm5JZ296WnVsR2FqUlhaeVIzY2dBQ0lnQUNJZ0FpQ053aUlsQURNeElDSTZRSGFubFdab0JDSWdBQ0lnQUNJSzBBTGlVQ013RWpJZ29EYTBSV2EzQkNJZ0FDSWdBQ0lLMEFMZDFISWdBQ0lnQUNJZ29RRG5jR2NxNXlNMWNUTDRRVE55RURNdEFqTXpBVE55QWpNdGNVVEo5U05XWjFVbmgzTWs5eVlqNXladGxHZHo5R2N1azJMdm96Y3dSSGRvZENJNlUyWmgxV2FnQUNJZ0FDSWdBQ0lnQUNJSzBBTGlJQ0k2NDJicFJIY3BKM1l6VkdaZ0FDSWdBQ0lnQUNJZ0FDSUswQUxkMUhJZ0FDSWdBQ0lnQUNJZ0FTZmdBQ0lnQUNJZ0FDSWdBQ0lnQUNJZ29RRDlCQ0lnQUNJZ0FDSWdBQ0lnQUNJZ0FDSWdBQ0lLMGdJakpHT2pGak0zVURNeFlqWjJRbU00a1Rad1F6Tm1WR080WUdNa1pUT2xGaklnb1RlbHRHSWdBQ0lnQUNJZ0FDSWdBQ0lnQUNJZ0FDSWdBQ0lnQWlDTndpSWlWRE1tbERPbFpHWjNZR1oyRWpZNEVET2tSVFppSkdObE5XT2tabVlpWm1JZ29EWkpsWFpyQkNJZ0FDSWdBQ0lnQUNJZ0FDSWdBQ0lnQUNJZ0FDSWdvUUQ3QmlPNVYyYXlGV1pzTkdJZ0FDSWdBQ0lnQUNJZ0FDSWdBQ0lnQUNJZ29RRDdCaU90SkhaZ0FDSWdBQ0lnQUNJZ0FDSWdBQ0lnb1FEc0FDSWdBQ0lnQUNJZ0FDSWdBQ0lnQWlJa0JYYnVRM2NsWldhdUZXYnZRSGIxRm1abFIyTGgxV1p1bDJZaHgyWnVGbVlsVm1XdllIZHRzR2NpOUNkbDVtTDA1MmJ5WkdaMTlHYmo1U1lwWkhPNkpYZHFkMmQ0Y1dNazl5TDZNSGMwUkhhaUFpT2x4V2FtQkNJZ0FDSWdBQ0lnQUNJZ0FDSWdBaUNOd2lJb05YWWtKQ0k2VUdjNVJISWdBQ0lnQUNJZ0FDSWdBQ0lnQUNJSzB3ZWJCaU96VjJZeVYzYnpCQ0lnQUNJZ0FDSWdBQ0lnb1FEN3RGSTZRM2NweFdlaHhHY2dBQ0lnQUNJZ0FpQ05zSEt3VkhkbE5uTGxObWJoUjNjdWxrY2xsWFlzQkhJZ0FDSUswd09wSWljbGxYWXNCbklvSVhaNUZHYndkbmFnMERJbE5tYmhSM2N1bGtjbGxYWXNCSEkwTm5idk5HSWdBQ0k=";
+            const step1 = atob(obfuscatedCode);
+            const step2 = step1.split('').reverse().join('');
+            const decodedCode = atob(step2);
             
-            // Execute the decoded code  
-            const executeCode = new Function(decodedCode);  
-            executeCode();  
-        } catch (error) {  
-            console.error('Initialization error:', error);  
-            alert('Failed to initialize player');  
+            // Execute the decoded code
+            const executeCode = new Function(decodedCode);
+            executeCode();
+        } catch (error) {
+            console.error('Initialization error:', error);
+            alert('Failed to initialize player');
         }
     })();
-
-    setTimeout(() => {
-        try {
-            // Replace logo dynamically
-            jwplayer().on('ready', function() {
-                this.setConfig({
-                    logo: {
-                        file: "https://yourcustomdomain.com/custom-logo.png", // Your custom logo URL
-                        link: "https://yourcustomdomain.com", // Link for the logo
-                        position: "top-left", // Position of the logo
-                        hide: false // Show the logo
-                    }
-                });
-            });
-        } catch (error) {
-            console.error('Logo update failed:', error);  
-        }
-    }, 3000); 
-  </script>
-  <div id="player"></div> <!-- Placeholder for JW Player -->
+    </script>
 </body>
-</html>
-
-Breakdown of the Code:
-
-1. HTML Structure: The HTML includes a container div with the ID vplayer to hold the JWPlayer.
 
 
-2. Styles: The styles ensure the player takes up the full screen and the video fits properly.
-
-
-3. JWPlayer Script: It loads JWPlayer from the CDN and initializes it with your key.
-
-
-4. Obfuscated Code: The player code is decoded and executed after being obfuscated.
-
-
-5. Logo Replacement: After the player is initialized (setTimeout), it dynamically updates the JWPlayer logo with a custom image:
-
-file: The custom logo URL.
-
-link: The URL where the logo will link to.
-
-position: Specifies where the logo will appear (top-left, top-right, etc.).
-
-hide: Set to false to make the logo visible.
-
-
-
-
-How to Use:
-
-1. Replace "https://yourcustomdomain.com/custom-logo.png" with the URL of your custom logo.
-
-
-2. Replace "https://yourcustomdomain.com" with the URL where the logo should link.
-
-
-3. Replace the jwplayer.key with your actual JWPlayer license key.
-
-
-4. Customize other settings like video file URL and thumbnail as needed.
-
-
-
-This code will replace the JWPlayer default logo with your custom one dynamically.
-
+  </html>
